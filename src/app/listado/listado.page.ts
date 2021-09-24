@@ -6,20 +6,23 @@ import { PedidosService } from '../pedidos/pedidos.service';
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-listado',
+  templateUrl: 'listado.page.html',
+  styleUrls: ['listado.page.scss'],
 })
-export class HomePage implements OnInit{
+export class ListadoPage implements OnInit{
 
   pedidos: PedidosI[];
   
   constructor(private pedidosService: PedidosService){}
 
   ngOnInit(){
-    this.pedidosService.getPedidos().subscribe( res => {
       this.pedidosService.getPedidos().subscribe(res => this.pedidos = res);
-    });
+  }
+
+  onRemove(pedidosId: string){
+    console.log(pedidosId);
+    this.pedidosService.deletePedido(pedidosId);
   }
 
 }

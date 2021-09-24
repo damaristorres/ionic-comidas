@@ -5,23 +5,28 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- 
-<ion-content >
+<ion-content padding>
   <ion-list>
     <ion-item-sliding *ngFor="let pedido of pedidos">
-      <ion-item lines="inset" button [routerLink]= "['/pedidos', pedido.id]">
+      <ion-item lines="inset" button [routerLink]="['/pedidos', pedido.id]">
         <ion-list>
           <ion-label class="ion-padding-top">
-            {{ pedido.pedidos}}
+            {{ pedido.pedidos }}
           </ion-label>
           <ion-label class="ion-padding-top">
-            {{ pedido.prioridad}}
+            {{ pedido.prioridad }}
           </ion-label>
+          <!-- <ion-label class="ion-padding-top">
+              <ion-fab-button routerLink="/listado" color="danger" 
+              routerDirection="forward" size="small" (click)="onRemove(idPedidos)">
+                <ion-icon name="trash-outline"></ion-icon>              
+              </ion-fab-button>
+          </ion-label> -->
         </ion-list>
       </ion-item>
     
       <ion-item-options side="end">
-        <ion-item-option (click)="onRemove(item)" color="secoundary">
+        <ion-item-option (click)="onRemove(item)" color="danger">
               <ion-icon slot="end" name="checkmark"></ion-icon>
         </ion-item-option>
       </ion-item-options>
@@ -34,4 +39,4 @@
     </ion-fab-button>
   </ion-fab>
 
-</ion-content> -->
+</ion-content>

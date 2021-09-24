@@ -1,3 +1,42 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+  <app-menu></app-menu>
+    <ion-menu side="start" menuId="first" contentId="main">
+      <ion-header>
+        <ion-toolbar color="danger">
+          <ion-title>Opciones</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          
+          <ion-item routerLink="listado">
+            <ion-icon name="create-outline"></ion-icon>
+            Listado
+          </ion-item>
+          <ion-item routerLink="pedidos">
+            <ion-icon name="restaurant-outline" ></ion-icon> 
+            Pedidos
+          </ion-item>
+          <ion-item routerLink="ayuda">
+            <ion-icon name="help-outline" ></ion-icon>
+            Ayuda
+          </ion-item>
+          <ion-item routerLink="contacto">
+            <ion-icon name="call-outline" ></ion-icon>
+            Contacto
+          </ion-item>
+          <ion-item class="active" routerLink="foto">
+            <ion-icon name="flash-outline"></ion-icon>
+            NO
+          </ion-item>
+          <!-- <ion-item routerLink="login" (click)="cerrarSesion()">
+          <ion-icon name="exit-outline"></ion-icon>
+          Salir
+          </ion-item> -->
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-app>
+  
